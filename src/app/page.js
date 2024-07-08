@@ -1,6 +1,6 @@
 
 import Header from "./Header";
-import Data from "./Main";
+import Data from "./index";
 export default function Home() {
   return (
     <main >

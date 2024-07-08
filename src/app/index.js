@@ -3,11 +3,15 @@ import { Delete, DeleteIcon, Pen, PlusSquare } from 'lucide-react';
 import React from 'react'
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import Deletebtn from '@/components/ui/Delete';
+import Deletebtn from '@/components/ui/delete';
+
+
+const apiUrl = process.env.API_URL || "http://localhost:3000" ;
+
 
 
 async function getdata() {
-    let data = await fetch("http://localhost:3000/api/products",{
+    let data = await fetch(`${apiUrl}/api/products`,{
         cache:'no-store'
     })
     data = await data.json();

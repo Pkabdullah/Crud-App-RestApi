@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+
+
+
 export default function Create() {
 
     const [product, setproduct] = useState("");
@@ -18,7 +21,7 @@ try {
         return ;
     }
     else{
-        let createdata = await fetch("http://localhost:3000/api/products", {
+        let createdata = await fetch(`/api/products`, {
             method: "POST",
             body:JSON.stringify({product,quantity})
         });
@@ -31,16 +34,6 @@ try {
     console.log(error)
 }
 
-        // let createdata = await fetch("http://localhost:3000/api/products", {
-        //     method: "POST",
-        //     body:JSON.stringify({product,quantity})
-        // });
-        // createdata = await createdata.json()
-        // console.log(createdata);
-
-        // if(createdata){
-        //     alert(" New Product Added")
-        // }
     }
     
     return (

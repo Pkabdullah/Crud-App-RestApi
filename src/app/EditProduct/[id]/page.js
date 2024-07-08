@@ -2,10 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
-
 import { useRouter } from "next/navigation";
-
-
 export default function Update(props) {
     const [product,setproduct] = useState("");
     const [quantity,setquantity] = useState("");
@@ -13,11 +10,10 @@ export default function Update(props) {
     useEffect(() => {
         getproductDetail();
     }, []);
-
     async function getproductDetail() {
         let productId = props.params.id
         console.log(productId)
-        let productdata = await fetch(`http://localhost:3000/api/products/${productId}`)
+        let productdata = await fetch(`/api/products/${productId}`)
         productdata = await productdata.json();
         let result = productdata.result;
        
@@ -27,7 +23,7 @@ export default function Update(props) {
 
     async function updateProduct(){
         let productId = props.params.id
-        let data =await fetch(`http://localhost:3000/api/products/${productId}`,{
+        let data =await fetch(`/api/products/${productId}`,{
             cache:"no-cache",
             method:"PUT",
             body:JSON.stringify({product,quantity})
@@ -60,5 +56,3 @@ export default function Update(props) {
         </div>
     )
 }
-
-
