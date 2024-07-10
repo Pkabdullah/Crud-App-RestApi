@@ -6,12 +6,12 @@ import { Button } from '@/components/ui/button';
 import Deletebtn from '@/components/ui/delete';
 
 
-const apiUrl = process.env.API_URL || "http://localhost:3000" ;
 
+const url = "/api/products"
 
 
 async function getdata() {
-    let data = await fetch(`${apiUrl}/api/products`,{
+    let data = await fetch(`${url}`,{
         cache:'no-store'
     })
     data = await data.json();
