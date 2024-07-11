@@ -7,11 +7,11 @@ import Deletebtn from '@/components/ui/delete';
 
 
 
-const url = "/api/products"
+// const url = "/api/products"
 
 
 async function getdata() {
-    let data = await fetch(`${url}`,{
+    let data = await fetch(`/api/`,{
         cache:'no-store'
     })
     data = await data.json();
