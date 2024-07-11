@@ -1,4 +1,4 @@
-
+import Data from  "./index"
 import Header from "./Header";
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
   
 
 
+<Data/>
       
 
     </main>
