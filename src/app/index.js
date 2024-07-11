@@ -11,7 +11,7 @@ import Deletebtn from '@/components/ui/delete';
 
 
 async function getdata() {
-    let data = await fetch(`/api/`,{
+    let data = await fetch(`/api/products`,{
         cache:'no-store'
     })
     data = await data.json();
