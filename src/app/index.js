@@ -10,7 +10,7 @@ export default function Data() {
 
     const [pro, setpro] = useState([])
     async function Getdata() {
-        let data = await fetch("./api")
+        let data = await fetch("./api/products")
 
         data = await data.json();
         setpro(data.result)
